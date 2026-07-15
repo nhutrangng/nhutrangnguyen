@@ -1,0 +1,203 @@
+.projects-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 40px;
+}
+
+.projects-eyebrow {
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 0.85rem;
+    color: var(--teal);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    text-align: left;
+}
+
+.projects-heading {
+    font-family: 'Bungee', sans-serif;
+    font-size: 2.2rem;
+    color: var(--orange);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 #fff, 3px 3px 0 rgba(0,0,0,0.05);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.projects-intro {
+    font-size: 0.95rem;
+    color: var(--gray);
+    max-width: 620px;
+    margin: 0 auto 32px;
+    text-align: center;
+}
+
+.project-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 0.82rem;
+    color: #555;
+    background: #fff;
+    border: 1.5px solid #e2e8f0;
+    padding: 8px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.22s ease;
+}
+
+.tab-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--orange);
+}
+
+.tab-btn.is-active {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(217,119,6,0.28);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1.5px solid #eef1f5;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    animation: cardIn 0.45s ease backwards;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.1);
+}
+
+@keyframes cardIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.project-card:nth-child(1) { animation-delay: 0.05s; }
+.project-card:nth-child(2) { animation-delay: 0.13s; }
+.project-card:nth-child(3) { animation-delay: 0.21s; }
+.project-card:nth-child(4) { animation-delay: 0.29s; }
+.project-card:nth-child(5) { animation-delay: 0.37s; }
+
+.project-card.is-hidden { display: none; }
+
+.project-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: linear-gradient(135deg, #fdf3b8 0%, #fde8a9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumb-placeholder {
+    font-size: 2.6rem;
+    opacity: 0.55;
+}
+
+.project-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 0.6rem;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.9);
+    color: #92400e;
+    backdrop-filter: blur(4px);
+}
+
+.project-body {
+    padding: 18px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 8px;
+    line-height: 1.25;
+}
+
+.project-desc {
+    font-size: 0.82rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 14px;
+    flex: 1;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.project-tag {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.64rem;
+    font-weight: 600;
+    color: #b45309;
+    background: #fff8e6;
+    border: 1px solid rgba(217,119,6,0.2);
+    padding: 3px 9px;
+    border-radius: 6px;
+}
+
+.project-link {
+    align-self: flex-start;
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 0.72rem;
+    color: #fff;
+    background: #1f2937;
+    padding: 7px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.project-link:hover {
+    transform: translateX(3px);
+    background: var(--orange);
+}
+
+@media (max-width: 900px) {
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .projects-grid { grid-template-columns: 1fr; }
+    .projects-heading { font-size: 1.7rem; }
+}
