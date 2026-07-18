@@ -27,6 +27,6 @@ jobs:
             file: ./Dockerfile
             push: true
             tags: |
-                    ${{ secrets.DOCKER_USERNAME }}/tracy-portfolio:latest
-                    ${{ secrets.DOCKER_USERNAME }}/tracy-portfolio:${{ github.sha }}
+                    ${{ secrets.DOCKERHUB_USERNAME }}/tracy-portfolio:latest
+                    ${{ secrets.DOCKERHUB_USERNAME }}/tracy-portfolio:${{ github.sha }}
 
